@@ -29,6 +29,15 @@
             cursor: default;
         }
 
+        .swal-modal {
+            background-color: #171717;
+            border: 1.75px solid #ceabf8;
+        }
+
+        .swal-text {
+            color: white;
+        }
+
         @media only screen and (max-width: 600px) {
             body > h3 {
                 font-size: 14px;
@@ -38,7 +47,7 @@
 </head>
 <body>
     <h1><b>Crypto Donation Page</b></h1>
-    <h5>Double Tap Address To Copy</h5><br><br>
+    <h5>Slowly Double Tap Address To Copy</h5><br><br>
     <h3><b>BTC:</b>&nbsp;<span id="btc" onclick="copyAddr('btc');">bc1qfys3zq6l7xdtxs0mxjupgsas0k6aesl8kzzdgq</span></h3>
     <h3><b>ETH:</b>&nbsp;<span id="eth" onclick="copyAddr('eth');">0x540202a2Caf822b1E1f766d76132e1C7ba4B2452</span></h3>
     <h3><b>BCH:</b>&nbsp;<span id="bch" onclick="copyAddr('bch');">qq8lnrl7ul4kp5wq889k9wlq90afrgs9359d3famed</span></h3>
