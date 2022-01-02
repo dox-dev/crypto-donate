@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Donate (dox-dev)</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+
+        body {
+            text-align: center;
+            padding: 10vmax 0;
+            font-family: 'Raleway', sans-serif;
+            background-color: #171717;
+            color: whitesmoke;
+        }
+        
+        h1 {
+            font-size: 35px;
+        }
+
+        h5 {
+            color: rgba(245, 245, 245, 0.479);
+        }
+
+        span {
+            cursor: default;
+        }
+
+        @media only screen and (max-width: 600px) {
+            body > h3 {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1><b>Crypto Donation Page</b></h1>
+    <h5>Double Tap Address To Copy</h5><br><br>
+    <h3><b>BTC:</b>&nbsp;<span id="btc" onclick="copyAddr('btc');">bc1qfys3zq6l7xdtxs0mxjupgsas0k6aesl8kzzdgq</span></h3>
+    <h3><b>ETH:</b>&nbsp;<span id="eth" onclick="copyAddr('eth');">0x540202a2Caf822b1E1f766d76132e1C7ba4B2452</span></h3>
+    <h3><b>BCH:</b>&nbsp;<span id="bch" onclick="copyAddr('bch');">qq8lnrl7ul4kp5wq889k9wlq90afrgs9359d3famed</span></h3>
+    <h3><b>ETC:</b>&nbsp;<span id="etc" onclick="copyAddr('etc');">0x0280d8f91DbA01c19CE77759375321BC1A383F0c</span></h3>
+    <h3><b>LTC:</b>&nbsp;<span id="ltc" onclick="copyAddr('ltc');">LduYxxkmqqZjH5kJyLGLRtvevSW9nUNx2t</span></h3>
+    <h3><b>TRX:</b>&nbsp;<span id="trx" onclick="copyAddr('trx');">TPr8svBXzkE2xoo4pqf3sWZy1bCe2smCwf</span></h3>
+    <h3><b>DOGE:</b>&nbsp;<span id="doge" onclick="copyAddr('doge');">DJ9gw2UEguD7rP4E1dvZPHTq3FLKY2T7Wh</span></h3>
+
+    <script>
+        function copyAddr(id) {
+        document.execCommand("copy");
+        const span = document.getElementById(id);
+
+        span.addEventListener("copy", function(event) {
+        event.preventDefault();
+        if (event.clipboardData) {
+            event.clipboardData.setData("text/plain", span.textContent);
+            swal("Successfully copied " + id.toUpperCase() + " address", {
+                buttons: false,
+                timer: 1250,
+            });
+        }
+        });
+    }
+    </script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+</html>
